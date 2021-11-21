@@ -15,7 +15,7 @@ import requests
 
 from oauth2client.service_account import ServiceAccountCredentials
 
-PROJECT_ID = 'repro-project-319802'
+PROJECT_ID = ''
 BASE_URL = 'https://fcm.googleapis.com'
 FCM_ENDPOINT = 'v1/projects/' + PROJECT_ID + '/messages:send'
 FCM_URL = BASE_URL + '/' + FCM_ENDPOINT
@@ -28,7 +28,7 @@ def _get_access_token():
   :return: Access token.
   """
   credentials = ServiceAccountCredentials.from_json_keyfile_name(
-      '/home/patilb/keys/repro_key.json', SCOPES)
+      '<service_account_key_file_location>', SCOPES)
   access_token_info = credentials.get_access_token()
   return access_token_info.access_token
 # [END retrieve_access_token]
@@ -63,7 +63,7 @@ def _build_common_message():
   """
   return {
     'message': {
-      'token':'fcwJtmvsQkewbMjJxXaa2B:APA91bEbajs6hZ0cztvMgYpBq8X1Qn9zLrmVHwfIDC-Q3_NfiBZKFvX4f8I4tchHGOHPA2qByqDjxBdkYmNXCxvYqJrf-dRxeF-0eBG92JpBQkf2hGVobd3xCBD_GXkjeYYEOxozQfRw',
+      'token': '<target_device_registration_id>',
       'notification': {
         'title': 'FCM Notification',
         'body': 'Notification from FCM'
