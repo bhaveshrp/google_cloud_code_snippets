@@ -69,8 +69,8 @@ def _build_common_message():
         'body': 'Notification from FCM'
       },
       'fcmOptions': {
-			'analytics_label': 'test_label'
-		}
+	'analytics_label': 'test_label'
+      }
     }
   }
 
